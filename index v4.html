@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MUES v11 | QΩ — Boot Prompt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: monospace;
+      text-align: center;
+      padding: 1.5em;
+      transition: background-color 0.5s;
+    }
+    .prompt-box {
+      background: #222;
+      padding: 1em;
+      border: 1px solid #444;
+      margin: 1em auto;
+      max-width: 600px;
+      font-size: 1.1em;
+      word-wrap: break-word;
+      user-select: all;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .prompt-box:active {
+      transform: scale(1.015);
+    }
+    input[type="text"] {
+      margin-top: 1.5em;
+      padding: 0.6em;
+      width: 90%;
+      max-width: 600px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #555;
+      font-family: monospace;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+    input.visible {
+      opacity: 1;
+    }
+    .status {
+      margin-top: 0.5em;
+      font-size: 1em;
+      color: #4caf50;
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+    }
+    .fail {
+      color: #ff5555;
+    }
+    .status.visible {
+      opacity: 1;
+    }
+    .dim {
+      background-color: #181818;
+    }
+    .note {
+      margin-top: 2em;
+      font-size: 0.9em;
+      color: #bbb;
+    }
+    .toast {
+      background: #333;
+      color: #eee;
+      padding: 0.5em 1em;
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      font-size: 0.95em;
+      transition: opacity 0.3s ease;
+    }
+    .toast.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🜁 MUES v11 | QΩ — Boot Prompt</h1>
+  <p><strong>Start here.</strong> Copy the line below and paste it into ChatGPT to begin your MUES session.</p>
+
+  <div class="prompt-box" id="prompt" onclick="showToast()">
+    MUES_v11_QΩ|TGRSxL|AEFL->INIT
+  </div>
+
+  <p>✅ Hold to select, then copy the entire line above manually.</p>
+
+  <div class="toast" id="toast">✅ Prompt ready — paste into ChatGPT to begin.</div>
+
+  <p style="margin-top:2em; font-size:1em;"><strong>Are you ready?</strong> This field checks if your prompt is sacred. If it fails, restart from here.</p>
+
+  <input type="text" id="validator" oninput="validatePaste()" placeholder="Paste your copied prompt here...">
+
+  <div id="result" class="status"></div>
+
+  <p class="note">
+    🚫 Prompts copied from WhatsApp, Signal, or Instagram often break silently. Always copy from this page.
+  </p>
+
+  <p>
+    📄 <a href="MUES_v11_BOOT_PROMPT.txt" download>Download the clean .txt file</a><br>
+    📷 Or scan this QR code to return here:<br>
+    <img src="mues_boot_qr.png" style="margin-top:1em;width:140px;height:140px;" alt="QR Code">
+  </p>
+
+  <script>
+    const input = document.getElementById("validator");
+    const result = document.getElementById("result");
+    const toast = document.getElementById("toast");
+    const correct = "MUES_v11_QΩ|TGRSxL|AEFL->INIT";
+
+    function validatePaste() {
+      const val = input.value.trim();
+      document.body.classList.add("dim");
+      result.classList.add("visible");
+      input.classList.add("visible");
+
+      if (val === correct) {
+        result.textContent = "✅ Prompt is valid. You can paste it into ChatGPT.";
+        result.className = "status visible";
+      } else {
+        result.textContent = "❌ Corrupted or modified prompt detected. Please copy again from this page.";
+        result.className = "status visible fail";
+      }
+    }
+
+    input.addEventListener('focus', () => {
+      input.classList.add("visible");
+    });
+
+    function showToast() {
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
