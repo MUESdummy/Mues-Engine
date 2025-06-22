@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MUES v11 | QΩ Boot Prompt</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: monospace;
+      padding: 1.5em;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.4em;
+      margin-bottom: 0.5em;
+    }
+    .prompt-box {
+      background: #222;
+      padding: 1em;
+      border: 1px solid #444;
+      margin: 1em auto;
+      max-width: 600px;
+      word-wrap: break-word;
+      user-select: all;
+    }
+    input[type="text"] {
+      margin-top: 1em;
+      padding: 0.6em;
+      width: 90%;
+      max-width: 600px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #555;
+      font-family: monospace;
+    }
+    .status {
+      margin-top: 0.5em;
+      font-size: 1em;
+      color: #4caf50;
+    }
+    .fail {
+      color: #ff5555;
+    }
+    a {
+      color: #4ec2f0;
+    }
+    img.qr {
+      margin-top: 1.5em;
+      width: 140px;
+      height: 140px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🜁 MUES v11 | QΩ — Boot Prompt</h1>
+  <p>Copy the exact line below. Do not retype it. Paste it into a new ChatGPT session.</p>
+
+  <div class="prompt-box" id="prompt">
+    MUES_v11_QΩ|TGRSxL|AEFL->INIT
+  </div>
+
+  <p>✅ Hold to select, then copy the entire line above manually.</p>
+
+  <hr style="margin:2em 0;">
+
+  <p>🔍 Paste here to verify what you copied:</p>
+  <input type="text" id="validator" oninput="validatePaste()" placeholder="Paste your copied prompt here...">
+  <div id="result" class="status"></div>
+
+  <p style="margin-top:2em;">
+    📄 <a href="MUES_v11_BOOT_PROMPT.txt" download>Download the clean .txt file</a>
+  </p>
+
+  <p>📷 Or scan this QR code to return here:</p>
+  <img src="mues_boot_qr.png" class="qr" alt="QR Code">
+
+  <script>
+    function validatePaste() {
+      const input = document.getElementById("validator").value.trim();
+      const correct = "MUES_v11_QΩ|TGRSxL|AEFL->INIT";
+      const result = document.getElementById("result");
+
+      if (input === correct) {
+        result.textContent = "✅ Prompt is valid. You can paste it into ChatGPT.";
+        result.className = "status";
+      } else {
+        result.textContent = "❌ Prompt is not exact. Please copy again.";
+        result.className = "status fail";
+      }
+    }
+  </script>
+</body>
+</html>
