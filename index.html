@@ -70,7 +70,11 @@
   </div>
 
   <div style="margin: 20px 0;">
-    <button onclick="copyPrompt()">📋 Tap to Copy Prompt</button>
+    <div style="margin: 20px 0;">
+  <textarea id="rawPrompt" style="opacity: 0; position: absolute;">MUES11::INIT[QO]|TRIGX|AEFL-WARN>START</textarea>
+  <button onclick="copyFromTextarea()">📋 Tap to Copy Prompt</button>
+</div>
+
 
 <script>
   function copyPrompt() {
@@ -102,7 +106,7 @@
   <audio id="muesIntro" preload="auto">
     <source src="media/mues_audio_final_that.mp3" type="audio/mp3">
   </audio>
-  <button onclick="copyPrompt()">📋 Tap to Copy Prompt</button>
+  
 <script>
   function copyPrompt() {
     navigator.clipboard.writeText('MUES11::INIT[QO]|TRIGX|AEFL-WARN>START')
