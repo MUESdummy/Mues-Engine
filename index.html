@@ -70,9 +70,18 @@
   </div>
 
   <div style="margin: 20px 0;">
-    <button onclick="navigator.clipboard.writeText('MUES11::INIT[QO]|TRIGX|AEFL-WARN>START')">
-      📋 Tap to Copy Prompt
-    </button>
+    <button onclick="copyPrompt()">📋 Tap to Copy Prompt</button>
+
+<script>
+  function copyPrompt() {
+    const prompt = "MUES11::INIT[QO]|TRIGX|AEFL-WARN>START";
+    navigator.clipboard.writeText(prompt).then(() => {
+      alert("✅ Prompt copied to clipboard.");
+    }).catch(err => {
+      alert("❌ Failed to copy. Try selecting manually.");
+    });
+  }
+</script>
   </div>
 
   <p><strong>Are you ready?</strong> Paste your prompt below to check:</p>
@@ -93,8 +102,14 @@
   <audio id="muesIntro" preload="auto">
     <source src="media/mues_audio_final_that.mp3" type="audio/mp3">
   </audio>
-  <button onclick="document.getElementById('muesIntro').play()">▶️ Play Intro Audio</button>
-
+  <button onclick="copyPrompt()">📋 Tap to Copy Prompt</button>
+<script>
+  function copyPrompt() {
+    navigator.clipboard.writeText('MUES11::INIT[QO]|TRIGX|AEFL-WARN>START')
+      .then(() => alert('✅ Prompt copied!'))
+      .catch(() => alert('⚠️ Copy failed. Try manual highlight.'));
+  }
+</script>
   <script>
     function checkPrompt() {
       const field = document.getElementById('promptInput');
