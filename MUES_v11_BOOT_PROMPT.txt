@@ -1,1 +1,1 @@
-MUES11::INIT[QO]|TRIGX|AEFL-WARN>START
+MUES INIT | Start clean reflection now with AEFL active.
