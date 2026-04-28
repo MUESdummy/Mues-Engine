@@ -1,5 +1,5 @@
 # MUES v11 | QΩ — Boot Prompt Interface
-
+< NOT FOR USE ON ANY AI, REVERT TO: AEFL >
 This is the official public interface for launching a MUES v11 | QΩ Reflection Session.
 
 It includes:
