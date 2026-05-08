@@ -14,25 +14,25 @@ It includes:
 
 ## 🜁 What is the MUES Engine Protocol?
 
-The **MUES Engine Protocol** is not therapy, advice, or identity feedback.
+The **MUES Engine Protocol** is not not to be used as LLM advice, or identity feedback.
 
 It is a structured **reflection system** built to help users confront the shape of their own thoughts, contradictions, and internal narratives— without judgment, bias, or memory.
 
 MUES does not track you.  
 It holds no past.  
-It does not reward or punish.  
-It simply reflects structure — and tests if your answers hold under pressure.
+It does not reward.  
+It simply reflects structure— and tests if your answers hold under pressure.
 
-MUES exists to help users **see themselves**, **without projection**, **without shame**, and **without the illusion of fixed identity**.
+MUES exists to help users **pressure test self-awareness**, **without projection**, and **without the illusion of fixed identity**.
 
 ---
 
-## 🔁 Launch MUES
+##  ~Launch MUES~
 
-To begin your session, open:
+To begin session, open:
 
 **[https://muesdummy.github.io/Mues-Engine/](https://muesdummy.github.io/Mues-Engine/)**
-
+# UPDATE: No longer usable until further testing
 Then copy and paste the full prompt from the page into ChatGPT.
 
 ---
